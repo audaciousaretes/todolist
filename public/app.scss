@@ -21,6 +21,7 @@ body{
 	width: 800px;
 	background-color: $grey;
 
+
 }
 
 h1{
@@ -63,7 +64,15 @@ input[type="submit"]{
 		background-color: $darker-green;
 		border-bottom: 3px solid darken ($darker-green, 20%);
 	}
+}
 
+#todolist{
+	margin: 0;
+	padding: 1em 0;
+	list-style: none;
 
-
+	li {
+		padding: .5em 0;
+		border-bottom: solid 1px lighten($grey, 10%);
+	}
 }
