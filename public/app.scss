@@ -1,18 +1,69 @@
+$dark-grey: #1D2123;
+$grey: #25292C;
+$off-white: #D0D0D0;
+$green: #A2BF8D;
+$darker-green: darken($green, 20%);
+
+
+* {
+	box-sizing:border-box; //will make the input text box line up with surrounding border
+}
+
 body{
-	background-color: #1D2123;
-	color: #D0D0D0;
+	background-color: $dark-grey;
+	color: $off-white;
 	font-family: helvetica, arial, sans-serif;
 }
 
 #wrapper{
 	margin: 0 auto;
+	padding: 0em 2em;
 	width: 800px;
-	background-color: #25292C;
+	background-color: $grey;
 
 }
 
 h1{
 	text-align: center;
+	padding: .5em 0;
+
+}
+
+label {
+	display: block;
+	text-indent: -9999em;
+}
+
+input[type="text"]{
+	width: 100%;
 	padding: .5em;
+	background-color: $grey;
+	border: 15px solid $dark-grey;	
+	font-size: 24px;
+	color: $off-white;
+}
+
+input{
+	border-radius: 5px;
+}
+
+input[type="submit"]{
+	display: block;
+	width: 20%;
+	margin: 1em auto;
+	padding: .5em;
+	
+	border: 0;
+	border-bottom: 3px solid $darker-green;
+	background-color: #A2BF8D;
+	font-size: 18px;
+	
+	&:hover{   //this will have it so when mouse is hovering over button, it will change to something else
+		cursor: pointer;
+		background-color: $darker-green;
+		border-bottom: 3px solid darken ($darker-green, 20%);
+	}
+
+
 
 }
