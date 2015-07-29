@@ -61,3 +61,15 @@ input[type="submit"] {
 		border-bottom: 3px solid darken($dark-green, 20%);
 	}
 }	
+
+#todolist {
+	margin: 0;
+	padding: 0 1em;
+	list-style: none; 
+	line-height: 2em;
+
+	li {
+		padding: .5em 0;
+		border-bottom: solid;
+	}
+}
