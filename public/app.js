@@ -2,9 +2,8 @@ var todolist = [
 	"walk the dog.", 
 	"get the milk.", 
 	"remove fake todos.", 
-	"add a real todo." 
+	"add a real todo.", 
 	"create todo list app."];
-
 
 var addItem = function (item) {
 	return todolist.push(item);

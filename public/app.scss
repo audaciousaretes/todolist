@@ -73,3 +73,9 @@ input[type="submit"] {
 		border-bottom: solid;
 	}
 }
+
+@media (max-width: 800px) {
+	#wrapper {
+		width: 100%;
+	}
+}
