@@ -76,3 +76,19 @@ input[type="submit"]{
 		border-bottom: solid 1px lighten($grey, 10%);
 	}
 }
+
+@media (min-width: 800px) {
+	#wrapper {
+		width: 800px;
+		background-color: red;
+	}
+}
+
+@media (max-width: 799px) {
+	#wrapper {
+		width: 100%;
+	}
+	input[type="submit"] {
+		width: 50%;
+	}
+}
