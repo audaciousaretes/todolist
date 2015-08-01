@@ -1,26 +1,41 @@
-var todolist = [
-	"walk the dog.", 
-	"get the milk.", 
-	"remove fake todos.", 
-	"add a real todo.", 
-	"create todo list app."];
+var ToDoList = function () {
+	
+	var list = [];
 
-var addItem = function (item) {
-	return todolist.push(item);
+	this.addToDo = function (description) {
+		list.push(description);
+	};
+	
+	this.getTodos = function () {
+		return list;
+	};
+
+	this.count = function () {
+		return list.length;
+	};
 };
 
-var getItemCount = function () {
-	return todolist.length;
+var tl = new ToDoList();
+
+var todo = function (description) {
+	
+	this.description = description;
+	
+	var status = "private";
+	
+	this.getStatus = function () {
+		return status;
+	};
+
+	this.complete = function () {
+		this.status = "complete";
+	};
+
+	this.deffered = function () {
+		this.status = "deffered";
+	};
 };
 
-var getAllItems = function () {
-	return todolist; 
-};
 
-var removeItem = function (placeInList) {
-	return todolist.splice(placeInList, 1);
-};
 
-var getItem = function (placeInList) {
-	return todolist[placeInList];
-};
+
