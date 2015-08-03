@@ -18,8 +18,8 @@ var ToDoList = function () {
 var tl = new ToDoList();
 
 var todo = function (description) {
-	
-	this.description = description;
+
+	this.description = new addToDo(description);
 	
 	var status = "private";
 	
@@ -28,11 +28,11 @@ var todo = function (description) {
 	};
 
 	this.complete = function () {
-		this.status = "complete";
+		status = "complete";
 	};
 
 	this.deffered = function () {
-		this.status = "deffered";
+		status = "deffered";
 	};
 };
 
