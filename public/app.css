@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: #1D2123;
+  color: #D0D0D0;
+  font-family: helvetic, arial, sans-serif; }
+
+#wrapper {
+  margin: 0 auto;
+  width: 800px;
+  background-color: #25292C;
+  padding: 0 2em; }
+
+h1 {
+  text-align: center;
+  padding: .5em 0;
+  margin: 0; }
+
+input {
+  border-radius: 5px; }
+
+input[type="text"] {
+  font-size: 24px;
+  width: 100%;
+  background-color: #25292C;
+  color: #D0D0D0;
+  border: solid 15px #1D2123;
+  padding: .5em; }
+
+input[type="submit"] {
+  font-size: 18px;
+  width: 20%;
+  background-color: #A2BF8D;
+  margin: .5em auto;
+  display: block;
+  text-align: center;
+  border: 0;
+  border-bottom: 3px solid #6e9353;
+  padding: .5em; }
+  input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #6e9353;
+    border-bottom: 3px solid #3d522e; }
+
+label {
+  text-indent: -9999em;
+  display: block; }
+
+#todoList {
+  list-style: none;
+  margin: 0;
+  padding: 1.5em 0; }
+  #todoList li {
+    border-bottom: solid 1px #3c4348; }
+
+@media (max-width: 800px) {
+  #wrapper {
+    width: 100%; } }
+
+/*# sourceMappingURL=app.css.map */

@@ -25,6 +25,7 @@ body{
 h1 {
 	text-align: center;
 	padding: .5em 0;
+	margin: 0;
 }
 
 input {
@@ -61,3 +62,21 @@ label {
 	text-indent: -9999em;
 	display: block;
 }
+
+#todoList {
+	list-style: none;
+	margin: 0;
+	padding: 1.5em 0;
+
+	li {
+		border-bottom: solid 1px lighten($grey, 10%);
+	}
+}
+
+
+@media (max-width: 800px) {
+	#wrapper {
+		width: 100%;
+	}
+}
+
