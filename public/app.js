@@ -1,69 +1,57 @@
-var ToDoList = function () {
-	
+var toDoList = function () {
 	var list = [];
-
 	this.addToDo = function (description) {
-		var newToDo = new todo(description);
+		var newToDo = new toDo(description);
 		list.push(newToDo);
-		createAndAppendUIHelper(newToDo);
+		createAndAppendToDoUIHelper(newToDo);
 	};
-	
-	this.getTodos = function () {
+	this.getToDos = function () {
 		return list;
 	};
-
 	this.count = function () {
 		return list.length;
 	};
 };
+var tl = new toDoList();
 
-var tl = new ToDoList();
-
-var todo = function (description) {
-
+var toDo = function (description) {
 	this.description = description;
-	
 	var status = "incomplete";
-	
 	this.getStatus = function () {
 		return status;
 	};
-
 	this.complete = function () {
 		status = "complete";
 	};
-
 	this.deffered = function () {
 		status = "deffered";
 	};
 };
 
-function createTodoUIHelper (todo) {
+function createToDoUIHelper (toDo) {
 	var li = document.createElement("li");
-	li.innerHTML = todo.description;
-	li.className = todo.getStatus();
+	li.innerHTML = toDo.description;
+	li.className = toDo.getStatus();
 	return li;
 }
 
-function appendTodoUIHelper (createdLI) {
+function appendToDoUIHelper (createdLI) {
 	document.getElementById("todolist").appendChild(createdLI);
 }
 
-function createAndAppendUIHelper (todo) {
-	var toDoElement = createTodoUIHelper(todo);
-	appendTodoUIHelper(toDoElement);
+function createAndAppendToDoUIHelper (toDo) {
+	var toDoElement = createToDoUIHelper(toDo);
+	appendToDoUIHelper(toDoElement);
 }
 
 function setupListener () {
 	var formNodes = document.getElementsByTagName("form");
 	var form = formNodes[0];
-	form.addEventListener("submit", function (event){
+	form.addEventListener("submit", function(event) {
 		event.preventDefault();
 		var description = document.getElementById("todoitem").value;
 		tl.addToDo(description);
 		document.getElementById("todoitem").value = "";
 	});
 }
-
 setupListener();
-
