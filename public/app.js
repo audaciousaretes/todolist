@@ -3,7 +3,7 @@ var toDoList = function () {
 	this.addToDo = function (description) {
 		var newToDo = new toDo(description);
 		list.push(newToDo);
-		createAndAppendToDoUIHelper(newToDo);
+		return newToDo;
 	};
 	this.getToDos = function () {
 		return list;
@@ -28,30 +28,19 @@ var toDo = function (description) {
 	};
 };
 
-function createToDoUIHelper (toDo) {
-	var li = document.createElement("li");
-	li.innerHTML = toDo.description;
-	li.className = toDo.getStatus();
-	return li;
-}
-
-function appendToDoUIHelper (createdLI) {
-	document.getElementById("todolist").appendChild(createdLI);
-}
-
 function createAndAppendToDoUIHelper (toDo) {
-	var toDoElement = createToDoUIHelper(toDo);
-	appendToDoUIHelper(toDoElement);
+	var tmpl = $("#todo-template").text();
+	var render = _.template(tmpl);
+	$("#todolist").append(render({
+		description: toDo.description,
+		status: toDo.getStatus
+	}));
 }
 
-function setupListener () {
-	var formNodes = document.getElementsByTagName("form");
-	var form = formNodes[0];
-	form.addEventListener("submit", function(event) {
-		event.preventDefault();
-		var description = document.getElementById("todoitem").value;
-		tl.addToDo(description);
-		document.getElementById("todoitem").value = "";
-	});
-}
-setupListener();
+$("form").on("submit", function(event) {
+	event.preventDefault();
+	var todoType = $("#todoitem").val();
+	var newToDo = tl.addToDo(todoType);
+	$("#todoitem").val("");
+	createAndAppendToDoUIHelper(newToDo);
+});

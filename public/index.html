@@ -4,6 +4,7 @@
 		<title>ToDoList</title>
 		<link rel="stylesheet" href="/app.css"/>
 		
+		
 	</head>
 	<body>
 		<div id="wrapper">
@@ -14,16 +15,18 @@
 				<input type="submit" value="Add Item"/>
 			</form>
 			<ul id="todolist">
-				<li> Get Milk </li>
-				<li> Create a todolist application </li>
-				<li> Do something </li>
-				<li> Walk the dog </li>
 			</ul>
 		</div>
-		<script type="text/javascript" src="app.js"></script>
-	
-
-
+		<script type="text/template" id="todo-template">
+			<li class="todo <%= status %>">
+			<input type="checkbox" name="checkOffTodo"/>
+			<%= description %>
+			<a href="#">Edit</a>
+			</li>
+			</script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+		<script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>	
 	</body>
 
 </html>
