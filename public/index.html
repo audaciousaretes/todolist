@@ -4,23 +4,40 @@
 <head>
 <title>To Do List</title>
 	<link rel="stylesheet" type="text/css" href="/app.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 
 <body>
+	<div id="navigation"</div>
+
 	<div id="wrapper">
 		<h1>To Do List</h1>
+
 		<form method="">
 			<label for="todoItem">To Do Item:</label>
-			<input type="text" name="todoItem" id="todoItem" placeholder="Enter a To Do Item" />
+			<input type="text" name="createTodoInput" id="createTodoInput" placeholder="Enter a To Do Item" />
 			<input type="submit" value="Add Item">
 		</form>
+
 		<ul id="todoList">
-			<li>Get milk</li>
-			<li>Create to do list application</li>
-			<li>Do something worthwhile</li>
-			<li>Walk the dog</li>
 		</ul>
+		
 	</div>
+
+	<script type="text/template" id="todo-template">
+		<li class="todo <%= status %>">
+			<input type="checkbox" name="checkOffTodo"/>
+			<%= description %>
+			<a href="#">Edit</a>
+		</li>
+	</script>
+
+	<script type="text/template" id="hello-template">
+		<div><hello, <%= name %>.</div>
+	</script>
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 	<script type="text/javascript" src="/app.js"></script>
 
 </body>

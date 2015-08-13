@@ -18,7 +18,7 @@ var todolist = function () {
 };
 
 
-var newlist = new todolist;
+var tl = new todolist;
 
 var task = function (description) {
 	this.description = description;
@@ -37,52 +37,31 @@ var task = function (description) {
 	};
 };
 
-function createTaskUIHelper(task) {
-	var li = document.createElement("li");
-	li.innerHTML = task.description;
-	li.className = task.getStatus();
-	return li;
-}
+var todolistElement = $("#todoList");
 
-function appendTaskUIHelper (createdLI) {
-	document.getElementById("todolist").appendChild(createdLI);
-}
+var todolist = [{
+	description: "Do your homework",
+	status: "incomplete"
+},{
+	description: "Train the evil puppy",
+	status: "incomplete"
+},{
+	description: "Do the dishes",
+	status: "incomplete"
+}];
 
-function createAppendUIHelper (task) {
-	var taskElement = createTaskUIHelper(task);
-	appendTaskUIHelper(taskElement);
-}
+var templateStr = $("todo-template").text();
+var renderTemplate = _.template(templateStr);
 
-function setupListener () {
-	var formNodes = document.getElementsByTagName("form");
-	var form = formNodes[0];
-	form.addEventListener("submit", function(event) {
-		event.preventDefault();
-		var description = document.getElementById("newtask").value;
-		newlist.addTask(description);
-		document.getElementsById("newtask").value = "";
-	};
-}
+_.each(todoList, function (todo) {
+	var newHtml = renderTemplate(task);
+	todoListElement.append(newHTML);
+});
 
-setupListener ();
-
-// SECTION #2
-// Create a todo list constructor
-// 	private list
-// 	add todo method
-// 	get todo list length
-// 	show todos
-// Create a todo constructor
-// 	public description
-// 	private status
-// 	get status method
-// 	set status to "complete" method
-// 	set status to "deferred" method
-
-
-
- 
-
-
+$("form").on("submit", function(e) {
+	e.preventDefault();
+	var todoText = $("#createTodoInput").val();
+	todolistElement.append("<li>" + todoText + "</li>");
+});
 
 
