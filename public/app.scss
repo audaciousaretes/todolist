@@ -1,7 +1,7 @@
-$dark-grey: #1D2123;
-$off-white: #D0D0D0;
-$grey: #25292C;
-$gunmetal-green: #A2BF8D;
+$purple: #40086E;
+$white: #FFFFFF;
+$ltpurple: #B180D9;
+$gunmetal-green: #F2EB22;
 $gunmetal-greener: darken($gunmetal-green, 20%);
 
 * { 
@@ -10,15 +10,15 @@ $gunmetal-greener: darken($gunmetal-green, 20%);
 
 
 body{
-	background-color: $dark-grey;
-	color: $off-white;
+	background-color: $purple;
+	color: $white;
 	font-family: helvetic, arial, sans-serif;
 }
 
 #wrapper {
 	margin: 0 auto;
 	width: 800px;
-	background-color: $grey;
+	background-color: $ltpurple;
 	padding: 0 2em;
 }
 
@@ -35,9 +35,9 @@ input {
 input[type="text"] {
 	font-size: 24px;
 	width: 100%;
-	background-color: $grey;
-	color: $off-white;
-	border: solid 15px $dark-grey;
+	background-color: $ltpurple;
+	color: $white;
+	border: solid 15px $purple;
 	padding: .5em;
 }
 
@@ -69,7 +69,7 @@ label {
 	padding: 1.5em 0;
 
 	li {
-		border-bottom: solid 1px lighten($grey, 10%);
+		border-bottom: solid 1px lighten($ltpurple, 10%);
 	}
 }
 

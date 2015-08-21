@@ -3,7 +3,7 @@
 
 <head>
 <title>To Do List</title>
-	<link rel="stylesheet" type="text/css" href="/app.css">
+	<link rel="stylesheet" type="text/css" href="app.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 
@@ -25,10 +25,12 @@
 	</div>
 
 	<script type="text/template" id="todo-template">
-		<li class="todo <%= status %>">
-			<input type="checkbox" name="checkOffTodo"/>
+		<li id="<%= id %>" class="<%= status %>"
+
+	//	<li class="todo <%= status %>">
+	//		<input type="checkbox" name="checkOffTodo"/>
 			<%= description %>
-			<a href="#">Edit</a>
+	//		<a href="#">Edit</a>
 		</li>
 	</script>
 
@@ -38,7 +40,9 @@
 
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
-	<script type="text/javascript" src="/app.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="ajax.js"></script>
 
 </body>
 
