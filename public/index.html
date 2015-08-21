@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head></head>
-	<title>Todolist</title>
-	<link rel="stylesheet" href="/app.css"/>
+	<head>
+		<title>ToDolist</title>
+		<link rel="stylesheet" href="/app.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
 <body>
+	<div id="navigation">
+		</div>
 	<div id="wrapper"/>
-		<h1>Todolist</h1>
+		<h1> ToDoList </h1>
 		<form>
-			<label for="todoItem">Todo Item:</label>
-			<input type="text" name="todoItem" id="todoItem" placeholder="Enter a Todo"/>
+			<label for="todoitem">Todo Item:</label>
+			<input type="text" name="createTodoInput" id="createTodoInput" placeholder="Enter a something to do"/>
 			<input type="submit" value="Add Item"/>
 		</form>
 		<ul id="todolist">
-			<li>Get Milk</li>
-			<li>Create todolist application</li>
-			<li>Do something worthwhile</li>
-			<li>Walk the dog</li> 
 		</ul>
 	</div>
 
-	<script type="text/javascript" src="app.js"></script>
+	<script type="text/template" id="todo-template">
+		<li class="todo <%= status %>">
+			<input type="checkbox" name="checkOffTodo" />
+			<%= description %>
+			<a href="#">Edit</a>
+		</li>
+	</script>
+
+	<script type="text/template" id="hello-template">
+		<div>hello, <%= name %>, </div>
+	</script>
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+	<script type="text/javascript" src="todo_homework2.js"></script>
+	<script type="text/javascript" src="ajax.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+	
 </body>
 </html>

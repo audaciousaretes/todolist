@@ -177,4 +177,6 @@ function addTodo (description) {
 }
 
 
-
+$("form").on("submit", function() {
+ //do something
+});
