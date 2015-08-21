@@ -13,12 +13,14 @@
                 <input type="submit" value="Add Item" />
             </form>
             <ul id="todoList">
-                <li>Get Milk</li>
-                <li>Create todolist application</li>
-                <li>Do something worthwhile</li>
-                <li>Walk the dog</li>
             </ul>
         </div>
+        <script type="text/template" id="todoTemplate">
+            <li id="<%= id %>" class="<%= status %>"><%= status %> <%= description %></li>
+        </script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
         <script type="text/javascript" src="/app.js"></script>
     </body>
 </html>
