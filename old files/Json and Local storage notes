@@ -1,0 +1,46 @@
+//JSON
+//local storage
+
+//JSON - Javascript Object Notation
+// 
+
+var myJSONObj = {
+	"eye_color": "blue"  //objects are always in double quotes in JSON
+	"attributes": {
+		"height": {
+			"feet": 6,
+			"inches": 1
+		}
+	},
+	"gender": "male",
+};
+
+
+	// Every local storage is specific to the domain you're on
+
+
+if (localStorage.name) {
+	setupTemplate(localStorage.name);
+} else {
+	getGithubuserByUsername("chaseadamsio", function(username)) {
+		setupTemplate(username);
+		localStorage.name = username;
+});
+}
+
+function setupTeplate(username) {
+	var teplateStr = $("#hello-template").text();
+	var renderTemplate = _.template(templateStr);
+	var html = renderTemplate({ name: username});
+	$("#navigation").append(html);
+}
+
+function getGithubuserByUsername(username, callback) {
+	$.ajax({
+		method: "GET",
+		url: "https://api.github.com/users/" + username,
+		success: function(data) {
+			callback(data.login);
+		}
+	});
+}

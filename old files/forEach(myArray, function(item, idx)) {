@@ -1,0 +1,26 @@
+forEach(myArray, function(item, idx)) {
+	log("Hello, ", item, idx);
+});
+
+
+
+function forEach(array, callback) {
+	for (var idx = 0; idx < array.length; idx++) {
+    callback(array[idx], idx);
+    }
+}    
+    
+forEach(myArray, function (item, idx) {
+	log("Hello, " + item);
+});
+
+
+var myArray = ["Chase", "Mychelle", "Nick", "Frank"];
+'
+function map(array) {
+	var newArray = [ ];
+    for (var idx=0; idx < array.length; idx++); {
+    var people = array[idx] + " likes apples";
+    newArray.push(people);}
+    return newArray;  
+}

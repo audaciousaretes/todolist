@@ -1,5 +1,5 @@
 var getRemoteTodos = function (callback) {
-    $.getJSON("http://localhost:8080/todos", function(response))
+    $.getJSON("http://localhost:8080/todos", function(response)
     callback(response.todos);
 });
 };
