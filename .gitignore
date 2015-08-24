@@ -31,3 +31,4 @@ node_modules
 .sass-cache
 notes.js
 blah.js
+.DS_store
