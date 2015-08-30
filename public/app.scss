@@ -41,7 +41,7 @@ input[type="text"] {
 	padding: .5em;
 }
 
-input[type="submit"] {
+%btn {
 	font-size: 18px;
 	width: 20%;
 	background-color: $gunmetal-green;
@@ -51,6 +51,11 @@ input[type="submit"] {
 	border: 0;
 	border-bottom: 3px solid $gunmetal-greener;
 	padding: .5em;
+	}
+
+input[type="submit"] {
+	@extend %btn;
+	width: 50%;
 	&:hover {
 		cursor: pointer;
 		background-color: $gunmetal-greener;
@@ -73,6 +78,26 @@ label {
 	}
 }
 
+#todo {
+	padding: .5em 0;
+	border-bottom: 1px solid $ltpurple;
+
+	div {
+		float: right;
+
+		.edit, .destroy {
+			display: block;
+			float: left;
+			padding: .25em;
+		}
+		.edit {
+			background-color: #009BE8;
+		}
+		.destroy {
+			background-color: #f00;
+		}
+}
+}
 
 @media (max-width: 800px) {
 	#wrapper {

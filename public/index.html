@@ -19,18 +19,20 @@
 			<input type="submit" value="Add Item">
 		</form>
 
-		<ul id="todoList">
+		<ul id="todolist">
 		</ul>
 		
 	</div>
 
-	<script type="text/template" id="todo-template">
-		<li id="<%= id %>" class="<%= status %>"
+	<script type="text/template" id="api-info-template">
+		<div>API serving from <%= title %>@<%= version %></div>
+	</script>
 
-	//	<li class="todo <%= status %>">
-	//		<input type="checkbox" name="checkOffTodo"/>
+	<script type="text/template" id="todo-template">
+		<li id="todo" <%= status %> <%= description %> <div> <a class="edit">Edit</a> <a class="destroy">Delete</a></div>
+			<input type="checkbox" name="checkOffTodo"/>
 			<%= description %>
-	//		<a href="#">Edit</a>
+			<a href="#">Edit</a>
 		</li>
 	</script>
 
