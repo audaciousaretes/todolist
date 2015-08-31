@@ -39,6 +39,26 @@
             });
         };
 
+        var setupEditTodo = function() {
+
+        $("form").on("Edit", function(e) {
+
+            var todoDescription = $("#todoitem").val();
+
+            $.ajax({
+                data: {
+                    description: todoDescription
+                },
+                url: "http://localhost:8080/todos",
+                method: "PUT",
+                success: function(response) {
+                    $("todoitem").update(todoTmpl(response))
+                }
+            });
+        });
+    };
+
 setupTodolistTemplate(); 
 setupTodoListener();
+setupEditTodo();
 })();
