@@ -58,7 +58,26 @@
         });
     };
 
+
+        var setupDeleteTodo = function() {
+       
+        $("form").on("Delete", function(e) {
+          
+            $.ajax({
+                data: {
+                    description: todoDescription
+                },
+                url: "http://localhost:8080/todos",
+                method: "DELETE",
+                success: function(response) {
+                    $("todoitem").delete(todoTmpl(response))
+                }
+            });
+        });
+    };
+
 setupTodolistTemplate(); 
 setupTodoListener();
 setupEditTodo();
+setupDeleteTodo();
 })();
